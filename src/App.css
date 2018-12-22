@@ -1,32 +1,152 @@
 .App {
-  text-align: center;
+  display:flex;
+  flex-direction: column;
+  flex:1;
+  min-width:1366px;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header{
+  flex:1;
+  background-color: lightblue;
   display: flex;
   flex-direction: column;
+}
+.icongroup{
+  width:95%;
+  height:38px;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.logocons{
+  width: 80%;
+  align-self: center;
+
 }
 
-.App-link {
-  color: #61dafb;
+
+.content{
+  flex:2;
+  background-color: lightgrey;
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start ;
+  align-items: center;
+}
+.mainNav{
+  width:80%;
+  height:314px;
+  position:relative;
+  background-color: #2b81af;
+}
+.lia{
+  position: absolute;
+  left:0;
+  top:0;
+  width:33%;
+  height:153px;
+  background-color: #dd1144;
+}
+.lib{
+  position: absolute;
+  left:0;
+  top:0;
+  right:0;
+  margin:auto;
+  width:33%;
+  height:153px;
+  background-color: #ffc520;
+}
+.lic{
+  position: absolute;
+  top:0;
+  right:0;
+  width:33%;
+  height:153px;
+  background-color: #ffdddd;
+}
+.lid{
+  position: absolute;
+  bottom:0;
+  left:0;
+  width:33%;
+  height:153px;
+  background-color: #3a33d1;
+}
+.lie{
+  position: absolute;
+  left:0;
+  bottom:0;
+  right:0;
+  margin:auto;
+  width:33%;
+  height:153px;
+  background-color: #d6e9c6;
+}
+.lif{
+  position: absolute;
+  right:0;
+  bottom:0;
+  width:33%;
+  height:153px;
+  background-color: #FCE1E5;
+}
+.bacs{
+  height:18px;
+  width:80%;
+  background-color: #000000;
+}
+.botbox{
+  position: absolute;
+  bottom: 28px;
+  left:28px;
+  color:#ffffff
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
