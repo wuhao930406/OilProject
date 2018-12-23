@@ -1,149 +1,371 @@
 .App {
-  display:flex;
-  flex-direction: column;
-  flex:1;
-  min-width:1366px;
-  background: url("./images/bac.jpg") no-repeat center;
-  background-size: cover;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 1366px;
+    min-height:768px;
+    background: url("./images/bac.jpg") no-repeat center;
+    background-size: cover;
 }
-.header{
-  flex:1;
-  display: flex;
-  flex-direction: column;
-  background: url("./images/topbac.jpg") no-repeat center;
-  background-size: cover;
+
+.loadbox {
+    width: 100%;
+    height: 100%;
+    background-color: #222428;
+    position: fixed;
+    z-index: 99999999;
 }
-.icongroup{
-  width:95%;
-  height:38px;
-  align-self: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 38px;
+.tisi{
+    width: 200px;
+    text-align: center;
+    height:60px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display:block;
+    color:#fff;
+    font-size:26px;
+    margin-bottom: 11%;
+    font-weight: lighter;
 }
-.time{
-  display: flex;
-  background-color: #000000;
-  with:348px !important;
-  height: 38px;
-  border-radius: 600px;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 18px;
+
+.base {
+    height: 9em;
+    left: 50%;
+    margin: -7.5em;
+    padding: 3em;
+    position: absolute;
+    top: 50%;
+    width: 9em;
+    transform: rotateX(45deg) rotateZ(45deg);
+    transform-style: preserve-3d;
 }
-.time p{
-  color:#ffffff;
-  margin-top: -4px;
-  padding-left: 10px;
+
+.cube,
+.cube:after,
+.cube:before {
+    content: '';
+    float: left;
+    height: 3em;
+    position: absolute;
+    width: 3em;
+}
+
+/* Top */
+.cube {
+    background-color: #05afd1;
+    position: relative;
+    transform: translateZ(3em);
+    transform-style: preserve-3d;
+    transition: .25s;
+    box-shadow: 13em 13em 1.5em rgba(255, 255, 255, 0.1);
+    animation: anim 1s infinite;
+}
+
+.cube:after {
+    background-color: #049dbc;
+    transform: rotateX(-90deg) translateY(3em);
+    transform-origin: 100% 100%;
+}
+
+.cube:before {
+    background-color: #048ca7;
+    transform: rotateY(90deg) translateX(3em);
+    transform-origin: 100% 0;
+}
+
+.cube:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.cube:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.cube:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.cube:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+.cube:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.cube:nth-child(6) {
+    animation-delay: 0.3s;
+}
+
+.cube:nth-child(7) {
+    animation-delay: 0.35s;
+}
+
+.cube:nth-child(8) {
+    animation-delay: 0.4s;
+}
+
+.cube:nth-child(9) {
+    animation-delay: 0.45s;
+}
+
+@keyframes anim {
+    50% {
+        transform: translateZ(0.5em);
+    }
+}
+
+.header {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: url("./images/topbac.jpg") no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.icongroup {
+    width: 95%;
+    height: 38px;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 38px;
+    overflow: hidden;
+}
+
+.time {
+    display: flex;
+    background-color: #000000;
+    with: 348px !important;
+    height: 38px;
+    border-radius: 600px;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 18px;
+}
+
+.time p {
+    color: #ffffff;
+    margin-top: -4px;
+    padding-left: 10px;
+}
+
+.logocons {
+    width: 80%;
+    align-self: center;
+    transition: all 0.4s;
+}
+
+.content {
+    flex: 2;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+
+.mainNav {
+    width: 80%;
+    height: 314px;
+    position: absolute;
+    top: 47px;
+    left: 0;
+    right:0;
+    margin:auto;
+}
+
+.lia {
+    position: absolute;
+    width: 33%;
+    height: 153px;
+}
+
+.lib {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 33%;
+    height: 153px;
+}
+
+.lic {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 33%;
+    height: 153px;
+}
+
+.lid {
+    position: absolute;
+    width: 33%;
+    height: 153px;
+}
+
+.lie {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 33%;
+    height: 153px;
+}
+
+.lif {
+    position: absolute;
+    width: 33%;
+    height: 153px;
+}
+
+.mainNav a {
+    display: block;
+    cursor: pointer;
+    background-color: #191b1f;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.mainNav a:hover {
+    display: block;
+    cursor: pointer;
+    width: 33.5%;
+    height: 160px;
+    background: linear-gradient(to right, #0076fa, #0047a7);
+    z-index: 11;
+    transition: all 0.3s;
+    box-shadow: 0 0 30px #0076fa;
+}
+
+.mainNav a .leftcon {
+    position: absolute;
+    left: 10%;
+    bottom: 16px;
+}
+
+.mainNav a .leftcon .none {
+    width: auto;
+    height: 118px;
+    opacity:0;
+    transition: all 0.4s;
+}
+.mainNav a:hover .leftcon .none {
+    width: auto;
+    height: 130px;
+    opacity:0;
+    transition: all 0.4s;
+
+}
+
+.mainNav a .leftcon .f1 {
+    position: absolute;
+    top:6px;
+    left: 0;
+    right:0;
+    margin: auto;
+    height:48%;
+    z-index: 10;
+}
+.mainNav a:hover .leftcon .f1 {
+     position: absolute;
+     top:0;
+     left: 0;
+     right:0;
+     margin: auto;
+     height:53%;
+     z-index: 10;
+    animation:myanimate 1s linear infinite alternate ;
+    -webkit-animation:myanimate 1s linear infinite alternate ;
+ }
+.mainNav a .leftcon .bt {
+    position: absolute;
+    bottom:0;
+    width:100%;
+    z-index: 1;
+}
+@keyframes myanimate {
+    from{
+        top:16px
+    }to{
+         top:-10px
+     }
 }
 
 
-.logocons{
-  width: 80%;
-  align-self: center;
-  margin-top: 80px;
+.mainNav a .rightext {
+    position: absolute;
+    right: 6%;
+    bottom: 44px;
+}
+
+.mainNav a .rightext p {
+    color: #ffffff;
+    font-size: 22px;
+    text-align: right;
+    text-shadow: 0px 2px 2px #000;
+}
+
+.bacs {
+    position: absolute;
+    left: 0;
+    right:0;
+    top:365px;
+    height: 248px;
+    width: 80%;
+    background: url("./images/bactou.png") no-repeat center top;
+    background-size: contain;
+    margin-top: -12px;
 }
 
 
-.content{
-  flex:2;
-  position:relative;
-  display: flex;
-  flex-direction: column;
-  justify-content:flex-start ;
-  align-items: center;
-}
-.mainNav{
-  width:80%;
-  height:314px;
-  position:relative;
-  margin-top: 47px;
-}
-.lia{
-  position: absolute;
-  left:0;
-  top:0;
-  width:33%;
-  height:153px;
-}
-.lib{
-  position: absolute;
-  left:0;
-  top:0;
-  right:0;
-  margin:auto;
-  width:33%;
-  height:153px;
-}
-.lic{
-  position: absolute;
-  top:0;
-  right:0;
-  width:33%;
-  height:153px;
-}
-.lid{
-  position: absolute;
-  bottom:0;
-  left:0;
-  width:33%;
-  height:153px;
-}
-.lie{
-  position: absolute;
-  left:0;
-  bottom:0;
-  right:0;
-  margin:auto;
-  width:33%;
-  height:153px;
-}
-.lif{
-  position: absolute;
-  right:0;
-  bottom:0;
-  width:33%;
-  height:153px;
-}
-.mainNav li{
-  background-color: #191b1f;
-}
-.mainNav li .leftcon{
-  position: absolute;
-  left: 10%;
-  bottom:16px ;
-}
-.mainNav li .leftcon img{
-  width:auto;
-  height:118px
-}
-.mainNav li .rightext{
-  position: absolute;
-  right:6%;
-  bottom:44px ;
-}
-.mainNav li .rightext p{
-  color:#ffffff;
-  font-size: 24px;
-  text-align: right;
+.botbox {
+    position: absolute;
+    bottom: 28px;
+    left: 2.5%;
+    color: #ffffff
 }
 
-
-.bacs{
-  height:248px;
-  width:80%;
-  background:url("./images/bactou.png") no-repeat center top ;
-  background-size: contain;
+.fullscreen {
+    position: absolute;
+    bottom: 28px;
+    right: 2.5%;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s;
 }
-.botbox{
-  position: absolute;
-  bottom: 28px;
-  left:28px;
-  color:#ffffff
+
+.fullscreen img {
+    width: 20px;
+    height: 20px;
 }
 
+.fullscreen:hover {
+    position: absolute;
+    bottom: 28px;
+    right: 2.5%;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0, 149, 255, 0.6);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s;
+}
 
 
 
