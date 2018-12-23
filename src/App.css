@@ -3,12 +3,15 @@
   flex-direction: column;
   flex:1;
   min-width:1366px;
+  background: url("./images/bac.jpg") no-repeat center;
+  background-size: cover;
 }
 .header{
   flex:1;
-  background-color: lightblue;
   display: flex;
   flex-direction: column;
+  background: url("./images/topbac.jpg") no-repeat center;
+  background-size: cover;
 }
 .icongroup{
   width:95%;
@@ -18,17 +21,34 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-top: 38px;
 }
+.time{
+  display: flex;
+  background-color: #000000;
+  with:348px !important;
+  height: 38px;
+  border-radius: 600px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 18px;
+}
+.time p{
+  color:#ffffff;
+  margin-top: -4px;
+  padding-left: 10px;
+}
+
+
 .logocons{
   width: 80%;
   align-self: center;
-
+  margin-top: 80px;
 }
 
 
 .content{
   flex:2;
-  background-color: lightgrey;
   position:relative;
   display: flex;
   flex-direction: column;
@@ -39,7 +59,7 @@
   width:80%;
   height:314px;
   position:relative;
-  background-color: #2b81af;
+  margin-top: 47px;
 }
 .lia{
   position: absolute;
@@ -47,7 +67,6 @@
   top:0;
   width:33%;
   height:153px;
-  background-color: #dd1144;
 }
 .lib{
   position: absolute;
@@ -57,7 +76,6 @@
   margin:auto;
   width:33%;
   height:153px;
-  background-color: #ffc520;
 }
 .lic{
   position: absolute;
@@ -65,7 +83,6 @@
   right:0;
   width:33%;
   height:153px;
-  background-color: #ffdddd;
 }
 .lid{
   position: absolute;
@@ -73,7 +90,6 @@
   left:0;
   width:33%;
   height:153px;
-  background-color: #3a33d1;
 }
 .lie{
   position: absolute;
@@ -83,7 +99,6 @@
   margin:auto;
   width:33%;
   height:153px;
-  background-color: #d6e9c6;
 }
 .lif{
   position: absolute;
@@ -91,12 +106,36 @@
   bottom:0;
   width:33%;
   height:153px;
-  background-color: #FCE1E5;
 }
+.mainNav li{
+  background-color: #191b1f;
+}
+.mainNav li .leftcon{
+  position: absolute;
+  left: 10%;
+  bottom:16px ;
+}
+.mainNav li .leftcon img{
+  width:auto;
+  height:118px
+}
+.mainNav li .rightext{
+  position: absolute;
+  right:6%;
+  bottom:44px ;
+}
+.mainNav li .rightext p{
+  color:#ffffff;
+  font-size: 24px;
+  text-align: right;
+}
+
+
 .bacs{
-  height:18px;
+  height:248px;
   width:80%;
-  background-color: #000000;
+  background:url("./images/bactou.png") no-repeat center top ;
+  background-size: contain;
 }
 .botbox{
   position: absolute;
