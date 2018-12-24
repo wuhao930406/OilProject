@@ -122,22 +122,72 @@
 
 .header {
     flex: 1;
-    display: flex;
-    flex-direction: column;
     background: url("./images/topbac.jpg") no-repeat center;
     background-size: cover;
     overflow: hidden;
+    position: relative;
 }
+.fog__container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.fog__img {
+    position: absolute;
+    height: 100vh;
+    width: 300vw;
+}
+.fog__img--first {
+    background: url("./images/fog-1.png") repeat-x;
+    background-size: contain;
+    background-position: center;
+    -webkit-animation: marquee 60s linear infinite;
+    animation: marquee 60s linear infinite;
+}
+.fog__img--second {
+    background: url("./images/fog-2.png") repeat-x;
+    background-size: contain;
+    background-position: center;
+    -webkit-animation: marquee 40s linear infinite;
+    animation: marquee 40s linear infinite;
+}
+
+@-webkit-keyframes marquee {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(-200vw, 0, 0);
+        transform: translate3d(-200vw, 0, 0);
+    }
+}
+
+@keyframes marquee {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(-200vw, 0, 0);
+        transform: translate3d(-200vw, 0, 0);
+    }
+}
+
 
 .icongroup {
     width: 95%;
     height: 38px;
-    align-self: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 38px;
+    position: absolute;
+    top:38px;
+    left: 0;
+    right:0;
+    margin: auto;
     overflow: hidden;
 }
 
@@ -159,6 +209,10 @@
 }
 
 .logocons {
+    position: absolute;
+    left: 0;
+    right:0;
+    margin: auto;
     width: 80%;
     align-self: center;
     transition: all 0.4s;
@@ -171,6 +225,7 @@
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
+    border-top: #325197 solid 1px;
 }
 
 .mainNav {
@@ -228,11 +283,13 @@
 }
 
 .mainNav a {
-    display: block;
+    display: flex;
     cursor: pointer;
     background-color: #191b1f;
     transition: all 0.3s;
     z-index: 10;
+    justify-content: center;
+    align-items: center;
 }
 
 .mainNav a:hover {
@@ -250,6 +307,12 @@
     position: absolute;
     left: 10%;
     bottom: 16px;
+}
+
+.mainNav a .rightext {
+    position: absolute;
+    right: 10%;
+    bottom: 44px;
 }
 
 .mainNav a .leftcon .none {
@@ -301,11 +364,6 @@
 }
 
 
-.mainNav a .rightext {
-    position: absolute;
-    right: 6%;
-    bottom: 44px;
-}
 
 .mainNav a .rightext p {
     color: #ffffff;

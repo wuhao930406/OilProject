@@ -36,16 +36,8 @@ class App extends Component {
               let now = new Date().getTime();
               this.setState({
                   date:this.timetrans(now),
-                  loaded:true,
-                  hide:true
               })
         },1000)
-        setTimeout(()=>{
-            this.setState({
-                loadeds:true
-            })
-        },800)
-
     }
     //全屏
     fullScreen(){
@@ -110,6 +102,23 @@ class App extends Component {
 
             return (
               <div className="App">
+                  <img
+                      style={{width:0,height:0}}
+                      src='./assets/images/bac.jpg'
+                      onLoad={()=>{
+
+                        setTimeout(()=>{
+                            this.setState({
+                                loadeds:true
+                            },()=>{
+                               this.setState({
+                                     loaded:true,
+                                     hide:true
+                               })
+                            })
+                        },1000)
+                      }}
+                  />
                   <div className="loadbox" style={{bottom:loadeds?"-100%":0,transition:"all 0.4s",display:hide?"none":"block"}}>
                       <div className='base'>
                           <div className='cube'></div>
@@ -126,6 +135,11 @@ class App extends Component {
                   </div>
 
                   <div className="header">
+                      <div class="fog__container">
+                          <div class="fog__img fog__img--first"></div>
+                          <div class="fog__img fog__img--second"></div>
+                      </div>
+
                       <ul className="icongroup">
                           <li style={{marginLeft:loaded?0:-260,transition:"all 0.4s"}}>
                               <img src="./assets/images/gallery.png" alt=""/>
@@ -135,7 +149,7 @@ class App extends Component {
                               <p>星期{NUMBER_TRANSLATION[day]}  {date}</p>
                           </li>
                       </ul>
-                      <div className="logocons" style={{marginTop:loaded?44:600}}>
+                      <div className="logocons" style={{top:loaded?"36%":600}}>
                             <img src="./assets/images/Logo.png" alt=""/>
                       </div>
                   </div>
@@ -224,7 +238,7 @@ class App extends Component {
 
                       </div>
                       <p className="botbox">
-                          <b style={{padding:"0px 10px",backgroundColor:"#fff",marginRight:8}}></b>Technical support ：CPECC西南分公司      &nbsp;|&nbsp;      版本V2018.12.22</p>
+                          <b style={{padding:"0px 10px",backgroundColor:"#fff",marginRight:8}}></b>技术支持：CPECC西南分公司      &nbsp;|&nbsp;      版本V2018.12.22</p>
                       <div className="fullscreen" onClick={()=>{
                           this.changeScreen(fullscreen)
                       }}>
