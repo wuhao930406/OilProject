@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { message } from 'antd';
+
 let NUMBER_TRANSLATION = ['日', '一', '二', '三', '四', '五', '六'];
 
 class App extends Component {
@@ -95,6 +97,19 @@ class App extends Component {
         }
     }
 
+    //是否跳转
+    ifJump(item){
+        let {text,timeout} = window.configs.toastconfig;
+        if(item.url==""){
+            message.info(text,timeout);
+        }else{
+            if(item.target){
+                window.open(item.url)
+            }else{
+                window.location.href = item.url
+            }
+        }
+    }
 
 
     render() {
@@ -106,7 +121,6 @@ class App extends Component {
                       style={{width:0,height:0}}
                       src='./assets/images/bac.jpg'
                       onLoad={()=>{
-
                         setTimeout(()=>{
                             this.setState({
                                 loadeds:true
@@ -135,9 +149,9 @@ class App extends Component {
                   </div>
 
                   <div className="header">
-                      <div class="fog__container">
-                          <div class="fog__img fog__img--first"></div>
-                          <div class="fog__img fog__img--second"></div>
+                      <div className="fog__container">
+                          <div className="fog__img fog__img--first"></div>
+                          <div className="fog__img fog__img--second"></div>
                       </div>
 
                       <ul className="icongroup">
@@ -155,7 +169,9 @@ class App extends Component {
                   </div>
                   <div className="content">
                       <ul className="mainNav">
-                          <a href={window.configs.first.url} target={window.configs.first.target?"_blank":""} className="lia" style={{left:loaded?0:"-33%",top:loaded?0:-153}}>
+                          <li onClick={()=>{
+                              this.ifJump(window.configs.first)
+                          }} className="lia" style={{left:loaded?0:"-33%",top:loaded?0:-153}}>
                               <div className="leftcon">
                                   <img className="f1" src="./assets/images/1a.svg" alt=""/>
                                   <img className="bt" src="./assets/images/123b.svg" alt=""/>
@@ -167,8 +183,10 @@ class App extends Component {
                                       {window.configs.first.name2}
                                   </p>
                               </div>
-                          </a>
-                          <a href={window.configs.second.url} target={window.configs.second.target?"_blank":""} className="lib" style={{top:loaded?0:-153}}>
+                          </li>
+                          <li onClick={()=>{
+                              this.ifJump(window.configs.second)
+                          }} className="lib" style={{top:loaded?0:-153}}>
                               <div className="leftcon">
                                   <img className="f1" src="./assets/images/2a.svg" alt=""/>
                                   <img className="bt" src="./assets/images/123b.svg" alt=""/>
@@ -180,8 +198,10 @@ class App extends Component {
                                       {window.configs.second.name2}
                                   </p>
                               </div>
-                          </a>
-                          <a href={window.configs.third.url} className="lic" target={window.configs.third.target?"_blank":""} style={{right:loaded?0:"-33%",top:loaded?0:-153}}>
+                          </li>
+                          <li onClick={()=>{
+                              this.ifJump(window.configs.third)
+                          }}  className="lic" style={{right:loaded?0:"-33%",top:loaded?0:-153}}>
                               <div className="leftcon">
                                   <img className="f1" src="./assets/images/3a.svg" alt=""/>
                                   <img className="bt" src="./assets/images/123b.svg" alt=""/>
@@ -193,8 +213,10 @@ class App extends Component {
                                       {window.configs.third.name2}
                                   </p>
                               </div>
-                          </a>
-                          <a href={window.configs.fourth.url} className="lid" target={window.configs.fourth.target?"_blank":""} style={{left:loaded?0:"-33%",bottom:loaded?0:-153}}>
+                          </li>
+                          <li onClick={()=>{
+                              this.ifJump(window.configs.fourth)
+                          }}  className="lid" style={{left:loaded?0:"-33%",bottom:loaded?0:-153}}>
                               <div className="leftcon">
                                   <img className="f1" style={{top:16}} src="./assets/images/4a.svg" alt=""/>
                                   <img className="bt" src="./assets/images/4b.svg" alt=""/>
@@ -206,8 +228,10 @@ class App extends Component {
                                       {window.configs.fourth.name2}
                                   </p>
                               </div>
-                          </a>
-                          <a href={window.configs.fifth.url} className="lie" target={window.configs.fifth.target?"_blank":""} style={{bottom:loaded?0:-153}}>
+                          </li>
+                          <li onClick={()=>{
+                              this.ifJump(window.configs.fifth)
+                          }}  className="lie" style={{bottom:loaded?0:-153}}>
                               <div className="leftcon">
                                   <img className="f1" style={{top:16,left:14}} src="./assets/images/5a.svg" alt=""/>
                                   <img className="bt" src="./assets/images/5b.svg" alt=""/>
@@ -219,8 +243,10 @@ class App extends Component {
                                       {window.configs.fifth.name2}
                                   </p>
                               </div>
-                          </a>
-                          <a href={window.configs.sixth.url} className="lif" target={window.configs.sixth.target?"_blank":""} style={{right:loaded?0:"-33%",bottom:loaded?0:-153}}>
+                          </li>
+                          <li onClick={()=>{
+                              this.ifJump(window.configs.sixth)
+                          }}  className="lif" style={{right:loaded?0:"-33%",bottom:loaded?0:-153}}>
                               <div className="leftcon">
                                   <img className="f1" style={{top:16}} src="./assets/images/6a.svg" alt=""/>
                                   <img className="bt" src="./assets/images/6b.svg" alt=""/>
@@ -232,7 +258,7 @@ class App extends Component {
                                       {window.configs.sixth.name2}
                                   </p>
                               </div>
-                          </a>
+                          </li>
                       </ul>
                       <div className="bacs" style={{opacity:loaded?1:0,transition:"all 4s"}}>
 

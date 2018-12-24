@@ -14,7 +14,7 @@
     height: 100%;
     background-color: #222428;
     position: fixed;
-    z-index: 99999999;
+    z-index: 99;
 }
 .tisi{
     width: 200px;
@@ -34,7 +34,7 @@
 }
 
 .base {
-    height: 9em;
+    height: 9em !important;
     left: 50%;
     margin: -7.5em;
     padding: 3em;
@@ -54,12 +54,11 @@
     position: absolute;
     width: 3em;
 }
-
 /* Top */
 .cube {
     background-color: #05afd1;
     position: relative;
-    transform: translateZ(3em);
+    transform: translateZ(3em) !important;
     transform-style: preserve-3d;
     transition: .25s;
     box-shadow: 13em 13em 1.5em rgba(255, 255, 255, 0.1);
@@ -129,14 +128,14 @@
 }
 .fog__container {
     position: absolute;
-    height: 100%;
-    width: 100%;
+    height: 100% !important;
+    width: 100% !important;
     overflow: hidden;
 }
 .fog__img {
     position: absolute;
-    height: 100vh;
-    width: 300vw;
+    height: 100vh !important;
+    width: 300vw !important;
 }
 .fog__img--first {
     background: url("./images/fog-1.png") repeat-x;
@@ -282,17 +281,16 @@
     height: 153px;
 }
 
-.mainNav a {
-    display: flex;
+.mainNav li {
+    user-select: none;
+    display: block;
     cursor: pointer;
     background-color: #191b1f;
     transition: all 0.3s;
     z-index: 10;
-    justify-content: center;
-    align-items: center;
 }
 
-.mainNav a:hover {
+.mainNav li:hover {
     display: block;
     cursor: pointer;
     width: 33.5%;
@@ -303,25 +301,25 @@
     box-shadow: 0 0 30px #0076fa;
 }
 
-.mainNav a .leftcon {
+.mainNav li .leftcon {
     position: absolute;
     left: 10%;
     bottom: 16px;
 }
 
-.mainNav a .rightext {
+.mainNav li .rightext {
     position: absolute;
     right: 10%;
     bottom: 44px;
 }
 
-.mainNav a .leftcon .none {
+.mainNav li .leftcon .none {
     width: auto;
     height: 118px;
     opacity:0;
     transition: all 0.4s;
 }
-.mainNav a:hover .leftcon .none {
+.mainNav li:hover .leftcon .none {
     width: auto;
     height: 130px;
     opacity:0;
@@ -329,7 +327,8 @@
 
 }
 
-.mainNav a .leftcon .f1 {
+.mainNav li .leftcon .f1 {
+    user-select: none;
     position: absolute;
     top:6px;
     left: 0;
@@ -338,7 +337,7 @@
     height:48%;
     z-index: 10;
 }
-.mainNav a:hover .leftcon .f1 {
+.mainNav li:hover .leftcon .f1 {
      position: absolute;
      top:0;
      left: 0;
@@ -349,7 +348,7 @@
     animation:myanimate 1s linear infinite alternate ;
     -webkit-animation:myanimate 1s linear infinite alternate ;
  }
-.mainNav a .leftcon .bt {
+.mainNav li .leftcon .bt {
     position: absolute;
     bottom:0;
     width:100%;
@@ -365,7 +364,7 @@
 
 
 
-.mainNav a .rightext p {
+.mainNav li .rightext p {
     color: #ffffff;
     font-size: 22px;
     text-align: right;
@@ -411,7 +410,9 @@
     width: 20px;
     height: 20px;
 }
-
+.foo-bar{
+    z-index: 1000;
+}
 .fullscreen:hover {
     position: absolute;
     bottom: 28px;

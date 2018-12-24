@@ -2,6 +2,10 @@
  * Created by kurosaki on 2018/12/23.
  */
 window.configs = {
+    toastconfig:{
+        text:"请填写你的提示文字...",//提示文字信息
+        timeout:2  //2秒 这边写秒数
+    },
     first:{
         url:"http://www.baidu.com",//第1行第1个 链接地址
         name1:"3D设计",//第1行第1个 第1排文字
