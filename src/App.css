@@ -8,7 +8,10 @@
     background: url("./images/bac.jpg") no-repeat center;
     background-size: cover;
 }
-
+p{
+    margin: 0;
+    padding: 0;
+}
 .loadbox {
     width: 100%;
     height: 100%;
