@@ -195,6 +195,7 @@ p{
 
 .time {
     display: flex;
+    width:260px;
     background-color: #000000;
     with: 348px !important;
     height: 38px;
